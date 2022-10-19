@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Film Recipes</title>
+    <link rel="stylesheet" href="film_recipes.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  </head>
+
+     <header>
+      <a href="fujifilm.html" class="logo">HOME</a>
+     </header>
+
+  <body>
+
+    <div class="container">
+      <div class="card">
+        <div class="card-image loading"><img src="old_kodak.jpg" alt=""></div>
+        <div class="card-info">
+          <h3 class="card-title loading"><span>Old Kodak</span></h3>
+          <p class="card-description loading"><span>Classic Chrome;Dynamic Range: DR400;Highlight: +3.5;Shadow: -0.5;Color: +3;Noise Reduction: -4;Sharpening: -2;Clarity: -2;Grain Effect: Strong, Small;Color Chrome Effect: Strong;Color Chrome Effect Blue: Strong;White Balance: Auto White Priority, +1 Red & -6 Blue;ISO: Auto</span></p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-image loading"><img src="fujicolor_natura_1600.jpg" alt=""></div>
+        <div class="card-info">
+          <h3 class="card-title loading"><span>Fujicolor Nature 1600</span></h3>
+          <p class="card-description loading"><span>Classic Negative;Dynamic Range: DR400;Highlight: -1.5;Shadow: +1.5;Color: -2;Noise Reduction: -4;Sharpness: -2;Clarity: -4;Grain Effect: Strong, Large;Color Chrome Effect: Strong;Color Chrome Effect Blue: Strong;White Balance: 5500K, -1 Red & -2 Blue;ISO: Auto</span></p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-image loading"><img src="kodachrome_25.jpg" alt=""></div>
+        <div class="card-info">
+          <h3 class="card-title loading"><span>Kodachrome 25</span></h3>
+          <p class="card-description loading"><span>Classic Chrome; Dynamic Range: DR400; Highlight: +0.5;Shadow: -0.5;Color: +1;Noise Reduction: -4;Sharpening: +3;Clarity: +3;Grain Effect: Off;Color Chrome Effect: Strong;Color Chrome Effect Blue: Strong;White Balance: Daylight, +2 Red & -4 Blue;ISO: Auto, up to ISO 1600</span></p>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+    const cardImages = document.querySelectorAll(".card-image");
+    const cardTitles = document.querySelectorAll(".card-title");
+    const cardDescriptions = document.querySelectorAll(".card-description");
+    const cardImgs = document.querySelectorAll(".card-image img");
+    const cardTitleSpans = document.querySelectorAll(".card-title span");
+    const cardDescSpans = document.querySelectorAll(".card-description span");
+
+    const renderCard = () => {
+      cardImages.forEach((cardImage) => {
+        cardImage.classList.remove("loading");
+      });
+      cardTitles.forEach((cardTitle) => {
+        cardTitle.classList.remove("loading");
+      });
+      cardDescriptions.forEach((cardDescription) => {
+        cardDescription.classList.remove("loading");
+      });
+
+      cardImgs.forEach((cardImg) => {
+        cardImg.style.visibility = "visible";
+      });
+      cardTitleSpans.forEach((cardTitleSpan) => {
+        cardTitleSpan.style.visibility = "visible";
+      });
+      cardDescSpans.forEach((cardDescSpan) => {
+        cardDescSpan.style.visibility = "visible";
+      });
+    }
+
+    setTimeout(() => {
+      renderCard();
+    }, 4000);
+    
+    </script>  
+
+  </body>
+</html>

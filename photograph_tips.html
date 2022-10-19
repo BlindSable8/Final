@@ -1,0 +1,107 @@
+ <!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photograph tips</title>
+    <link rel="stylesheet" href="photograph_tips.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  </head>
+  
+     <header>
+      <a href="fujifilm.html" class="logo">HOME</a>
+     </header>
+  
+  <body>
+
+    <div class="slider">
+      <div class="slide active">
+        <img src="Framing.jpg" alt="">
+        <div class="info">
+          <h2>Framing</h2>
+          <p>A traditional way to direct attention to a subject is to frame it with something in the foreground. It enhances the subject as well as focusing our concentration on what the photographer deems important. </p>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="Sy.jpg" alt="">
+        <div class="info">
+          <h2>Symmetry</h2>
+          <p>One of the easiest ways to create a perfect composition is to shoot a symmetrical subject. Tje photo is perfectly balanced, and the graphic design you end up with is usually very pleasing.</p>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="Sc.jpg" alt="">
+        <div class="info">
+          <h2>S-Curve</h2>
+          <p>The S-curve can lead into or out of a scene,start at the bottom or side, but fundamentally it will roughly shape the letter S and either define the photograph or split the composition into two sections.</p>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="sl.jpg" alt="">
+        <div class="info">
+          <h2>Still Life</h2>
+          <p>Getting good at the various still life photography tips and techniques is the absolute fastest way to total mastery of photo techniques. We need to pay more attention on the lighting and the composition of placing.</p>
+        </div>
+      </div>
+      <div class="navigation">
+        <i class="fas fa-chevron-left prev-btn"></i>
+        <i class="fas fa-chevron-right next-btn"></i>
+      </div>
+      <div class="navigation-visibility">
+        <div class="slide-icon active"></div>
+        <div class="slide-icon"></div>
+        <div class="slide-icon"></div>
+        <div class="slide-icon"></div>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+    
+    const slider = document.querySelector(".slider");
+    const nextBtn = document.querySelector(".next-btn");
+    const prevBtn = document.querySelector(".prev-btn");
+    const slides = document.querySelectorAll(".slide");
+    const slideIcons = document.querySelectorAll(".slide-icon");
+    const numberOfSlides = slides.length;
+    var slideNumber = 0;
+
+    nextBtn.addEventListener("click", () => {
+      slides.forEach((slide) => {
+        slide.classList.remove("active");
+      });
+      slideIcons.forEach((slideIcon) => {
+        slideIcon.classList.remove("active");
+      });
+
+      slideNumber++;
+
+      if(slideNumber > (numberOfSlides - 1)){
+        slideNumber = 0;
+      }
+
+      slides[slideNumber].classList.add("active");
+      slideIcons[slideNumber].classList.add("active");
+    });
+
+    prevBtn.addEventListener("click", () => {
+      slides.forEach((slide) => {
+        slide.classList.remove("active");
+      });
+      slideIcons.forEach((slideIcon) => {
+        slideIcon.classList.remove("active");
+      });
+
+      slideNumber--;
+
+      if(slideNumber < 0){
+        slideNumber = numberOfSlides - 1;
+      }
+
+      slides[slideNumber].classList.add("active");
+      slideIcons[slideNumber].classList.add("active");
+    });
+    
+    </script>
+
+  </body>
+</html>
